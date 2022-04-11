@@ -1,6 +1,8 @@
 import styled, {keyframes} from "styled-components";
 import { Tabs } from "antd";
 import { Collapse } from "antd";
+import 'antd/lib/tabs/style/index.css'
+import 'antd/lib/collapse/style/index.css'
 
 const enterAnimation = keyframes`
   0% {
