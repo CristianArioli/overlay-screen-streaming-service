@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import PlayButtonIcon from "../../assets/play-small-player-w.svg";
 import { getEpisodesOfTheShow } from "./episodes.service";
+import 'antd/lib/tabs/style/index.css';
+import 'antd/lib/collapse/style/index.css';
 import {
   Container,
   TabPaneContainer,
