@@ -37,6 +37,7 @@ function Overlay() {
       <ContainerOverlay backgroundUrl={backgroundUrl}>
         <div/>
         <div/>
+        <div/>
       </ContainerOverlay>
       <ContainerContent>
         <ContainerCloseButton>

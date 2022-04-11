@@ -1,5 +1,6 @@
+import {useState} from 'react';
 import RecImg from "../../assets/rec-gray-s.svg";
-import SadImg from "../../assets/sad-gray-w.svg";
+import HappyImg from "../../assets/happy-gray-w.svg";
 import ShareImg from "../../assets/share-gray-s.svg";
 import AddImg from "../../assets/add-gray-s.svg";
 
@@ -7,29 +8,36 @@ import {
   Container,
   ContainerSynopsis,
   ContainerButtons,
+  ListButtonStyled,
+  RecordButtonStyled,
+  EvaluateButtonStyled
 } from "./generalInformations.styled";
 
 function GeneralInformations({ showSynopsis }) {
+  const [isAddedToList, setIsAddedToList] = useState(false);
+  const [isBeingRecorded, setIsBeingRecorded] = useState(false);
+  const [evaluateWasClicked, setEvaluteWasClicked] = useState(false);
+
   return (
     <Container>
       <ContainerButtons>
         <div>
-          <button>
+          <ListButtonStyled isAddedToList={isAddedToList} onClick={() => setIsAddedToList(!isAddedToList)}>
             <img src={AddImg} alt="Botão para adicionar a sua lista" />
-          </button>
+          </ListButtonStyled>
           <p>Lista</p>
         </div>
         <div>
-          <button>
-            <img src={SadImg} alt="Botão para avaliar a serie" />
-          </button>
+          <EvaluateButtonStyled evaluateWasClicked={evaluateWasClicked} onClick={() => setEvaluteWasClicked(!evaluateWasClicked)}>
+            <img src={HappyImg} alt="Botão para avaliar a serie" />
+          </EvaluateButtonStyled>
 
           <p>Avaliar</p>
         </div>
         <div>
-          <button>
+          <RecordButtonStyled isBeingRecorded={isBeingRecorded} onClick={() => setIsBeingRecorded(!isBeingRecorded)}>
             <img src={RecImg} alt="Botão para gravar a serie" />
-          </button>
+          </RecordButtonStyled>
           <p>Gravar</p>
         </div>
         <div>

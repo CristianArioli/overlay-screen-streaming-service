@@ -24,7 +24,6 @@ function InformationsTabs({ showCast, showSynopsis }) {
           <CastInformations showCast={showCast} />
         </Tabs.TabPane>
         <Tabs.TabPane tab="Principais Prêmios" disabled key="3">
-          <div>teste</div>
         </Tabs.TabPane>
       </TabsContainer>
     </Container>

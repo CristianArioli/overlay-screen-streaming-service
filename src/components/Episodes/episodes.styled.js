@@ -1,24 +1,40 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 import { Tabs } from "antd";
-import 'antd/lib/tabs/style/index.css';
 import { Collapse } from "antd";
+import 'antd/lib/tabs/style/index.css';
+import 'antd/lib/collapse/style/index.css';
+
+const enterAnimation = keyframes`
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+`;
 
 export const Container = styled.div`
-  height: 61vh;
+  animation: ${enterAnimation} 2s;
+  height: 60vh;
+  padding-bottom: 1rem;
   display: flex;
   justify-content: end;
 
   & .ant-tabs {
-    @media (min-width: 761px) {
+    @media (min-width:1061px){
       width: 30%;
     }
-    @media (max-width: 760px) {
+    @media (max-width:1060px){
+      width: 40%;
+    }
+    @media (max-width: 824px) {
       width: 50%;
     }
     @media (max-width: 460px) {
       width: 100%;
     }
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.2);
     border-radius: 12px;
     padding: 0rem 1rem 1rem 1rem;
     -webkit-box-shadow: 14px 7px 15px 21px rgba(0, 0, 0, 0.2);
@@ -49,7 +65,7 @@ export const TabsContainer = styled(Tabs)`
   }
   & .ant-tabs-nav-list {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
   }
 `;
 
@@ -64,17 +80,16 @@ export const TabPaneContainer = styled(Tabs.TabPane)`
 
 export const CollapseContainer = styled(Collapse)`
   & .ant-collapse-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: center !important;
   }
 
   & .ant-collapse-item {
-    padding: 0.5rem;
     background: transparent;
     border-bottom: 1px solid var(--text-body) !important;
     font-size: 1rem;
-    color: var(--text-body);
+    div {
+      color: var(--text-body) !important;
+    }
   }
 
   & .ant-collapse {
@@ -93,8 +108,7 @@ export const RoundedButtonContainer = styled.div`
 
 export const CollapsePanelContainer = styled(Collapse.Panel)`
   & .ant-collapse-content{
-    background: transparent;
+    transition: all 1s;
+    background: tranparent;
   }
-
-  transtion: all ease 0.2s;
 `;

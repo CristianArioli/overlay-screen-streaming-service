@@ -22,10 +22,17 @@ export const ContainerOverlay = styled.div`
   }
 
   div:nth-child(2) {
-    position: rel;
+    position: absolute;
     width: inherit;
     height: inherit;
-    background: linear-gradient(to left,#111 15%,transparent 90%);
+    background: linear-gradient(to left,#111 10%,transparent 90%);
+  }
+
+  div:nth-child(3) {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background: linear-gradient(to bottom,#111 -120%,transparent 90%);
   }
 `;
 

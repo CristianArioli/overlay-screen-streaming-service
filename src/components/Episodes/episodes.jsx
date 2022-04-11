@@ -10,7 +10,6 @@ import {
 } from "./episodes.styled";
 
 function Episodes() {
-  // const [numberOfSeasons, setNumberOfSeasons] = useState(1);
   const [arrayOfSeasons, setArrayOfSeasons] = useState([]);
   const [episodes, setEpisodes] = useState([]);
 
@@ -18,7 +17,7 @@ function Episodes() {
     getEpisodesOfTheShow().then((data) => {
       setEpisodes(data);
       let numberOfSeasons = 1;
-      data.map((episode) => {
+      data.forEach((episode) => {
         if (episode?.SeasonNumber > numberOfSeasons)
           numberOfSeasons++;
       });
@@ -32,26 +31,30 @@ function Episodes() {
     </button>
   );
 
+  useEffect(()=> {
+    console.log(episodes)
+  },[episodes]);
+
   return (
     <Container>
       <TabsContainer>
         {arrayOfSeasons.map((_, i) => (
           <TabPaneContainer tab={`T${i + 1}`} key={`${i + 1}`}>
-            <CollapseContainer>
+            <CollapseContainer accordion ghost>
               {episodes?.map((episode) => {
-                if (episode?.SeasonNumber === i + 1) {
+                if (episode?.SeasonNumber === (i + 1)) {
                   return (
                     <CollapsePanelContainer
                       showArrow={false}
                       header={`${episode.EpisodeNumber} ${episode.Title}`}
-                      key={`${episode.EpisodeNumber}`}
+                      key={`${i + 1}${episode.EpisodeNumber}`}
                       extra={generatePlayButton()}
                     >
                       <img src={episode.Image} width="100%" alt="Imagem do episódio"/>
                       <p>{episode.Synopsis}</p>
                     </CollapsePanelContainer>
                   );
-                }
+                } else return "";
               })}
             </CollapseContainer>
           </TabPaneContainer>

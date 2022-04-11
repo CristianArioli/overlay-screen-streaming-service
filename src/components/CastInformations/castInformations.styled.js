@@ -9,10 +9,29 @@ export const ContainerCarousel = styled.div`
 `;
 
 export const ContainerCastInfo = styled.div`
-  font-size: 1.3rem !important;
   background: #212121;
   text-align: center;
-  height: 5rem;
-  display: inline-block;
-  padding: 0.5rem;
+  height: 6rem;
+  line-height: 0.9;
+  padding: 2rem;
+  @media (max-width: 628px) {
+    padding: 1.5rem;
+  }
+  @media (max-width: 561px) {
+    padding: 1.2rem;
+  }
+  span {
+    font-size: 1.3rem !important;
+    @media (max-width: 741px) {
+      font-size: 0.9rem !important;
+    }
+    color: var(--text-title);
+  }
+  p {
+    line-height: 1;
+    font-size: 0.85rem;
+    @media (max-width: 741px) {
+      font-size: 0.8rem !important;
+    }
+  }
 `;
