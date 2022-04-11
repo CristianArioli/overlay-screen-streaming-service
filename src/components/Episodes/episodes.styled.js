@@ -58,11 +58,6 @@ export const TabsContainer = styled(Tabs)`
     background: transparent;
     border: none;
   }
-
-  & .ant-tabs-nav{
-    position: fixed;
-    margin-bottom: 0 !important;
-  }
   & .ant-tabs-nav-list {
     display: flex;
     gap: 1rem;
