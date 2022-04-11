@@ -1,5 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 
+import 'antd/lib/tabs/style/index.css';
+import 'antd/lib/collapse/style/index.css';
+
 export const GlobalStyle = createGlobalStyle`
   :root {
     --text-title: #fcfcfe;
